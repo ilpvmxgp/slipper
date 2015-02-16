@@ -11,7 +11,7 @@ if [ -e $address "" ]; then
 fi
 
 cat << EOF > addr.js
-{
+var slipper = {
     "addr": "$address"
 }
 EOF
@@ -19,4 +19,4 @@ echo $address > addr
 
 git add .
 git commit -m "commit by post.sh on $(date)" -a
-git push origin gh-pages
+git push origin master:gh-pages
