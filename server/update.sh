@@ -4,9 +4,9 @@ SLIPPER_HOME=/home/$(whoami)/.slipper
 
 cd $SLIPPER_HOME
 
-address=$(curl ifconfig.me)
+address=$(curl -s ifconfig.me)
 
-if [ -e $address "" ]; then
+if [[ $address == "" ]]; then
     exit 1
 fi
 
@@ -15,7 +15,7 @@ var slipper = {
     "addr": "$address"
 }
 EOF
-echo $address > addr
+echo -n $address > addr
 
 git add .
 git commit -m "commit by post.sh on $(date)" -a
