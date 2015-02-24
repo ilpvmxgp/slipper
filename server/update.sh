@@ -19,4 +19,4 @@ echo -n $address > addr
 
 git add .
 git commit -m "commit by post.sh on $(date)" -a
-git push origin master:gh-pages
+git push origin master
